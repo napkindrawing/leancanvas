@@ -6,6 +6,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @canvases.each do |canvas| %>
@@ -13,6 +14,7 @@
     <td><%= canvas.name %></td>
     <td><%= link_to 'Show', canvas %></td>
     <td><%= link_to 'Edit', edit_canvas_path(canvas) %></td>
+    <td><%= link_to 'Clone', 'canvases/'+canvas.id.to_s+'/clone' %></td>
     <td><%= link_to 'Destroy', canvas, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

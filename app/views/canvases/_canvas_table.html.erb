@@ -1,4 +1,4 @@
-<% is_edit = controller.action_name.match(/new|edit/) %>
+<% is_edit = controller.action_name.match(/new|edit|clone/) %>
 
 <%= form_for(@canvas, :html => { :class => is_edit ? 'edit' : 'show' } ) do |f| %>
 

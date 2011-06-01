@@ -32,6 +32,26 @@ class CanvasesController < ApplicationController
     end
   end
 
+  def clone
+    @canvas = Canvas.new
+    @cloned_canvas = Canvas.find( params[:id] )
+    @canvas.name = 'Copy of ' + @cloned_canvas.name
+    @canvas.problem = @cloned_canvas.problem
+    @canvas.solution = @cloned_canvas.solution
+    @canvas.uvp = @cloned_canvas.uvp
+    @canvas.unfair_advantage = @cloned_canvas.unfair_advantage
+    @canvas.customer_segments = @cloned_canvas.customer_segments
+    @canvas.key_metrics = @cloned_canvas.key_metrics
+    @canvas.channels = @cloned_canvas.channels
+    @canvas.cost_structure = @cloned_canvas.cost_structure
+    @canvas.revenue_streams = @cloned_canvas.revenue_streams
+
+    respond_to do |format|
+      format.html { render :action => "new" }
+      format.xml  { render :xml => @canvas }
+    end
+  end
+
   # GET /canvases/1/edit
   def edit
     @canvas = Canvas.find(params[:id])

@@ -5,6 +5,8 @@ Lean::Application.routes.draw do
 
   get "home/index"
 
+  match 'canvases/:id/clone' => 'canvases#clone'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
