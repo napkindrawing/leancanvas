@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= render :partial => "canvas_table", :locals => {:canvas => @canvas} %> 
+
+
+<%= link_to 'Edit', edit_canvas_path(@canvas) %> |
+<%= link_to 'Back', canvases_path %>

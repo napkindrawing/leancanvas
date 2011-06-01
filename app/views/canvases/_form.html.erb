@@ -1,0 +1,57 @@
+<%= form_for(@canvas) do |f| %>
+  <% if @canvas.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@canvas.errors.count, "error") %> prohibited this canvas from being saved:</h2>
+
+      <ul>
+      <% @canvas.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :problem %><br />
+    <%= f.text_area :problem %>
+  </div>
+  <div class="field">
+    <%= f.label :solution %><br />
+    <%= f.text_area :solution %>
+  </div>
+  <div class="field">
+    <%= f.label :key_metrics %><br />
+    <%= f.text_area :key_metrics %>
+  </div>
+  <div class="field">
+    <%= f.label :uvp %><br />
+    <%= f.text_area :uvp %>
+  </div>
+  <div class="field">
+    <%= f.label :unfair_advantage %><br />
+    <%= f.text_area :unfair_advantage %>
+  </div>
+  <div class="field">
+    <%= f.label :channels %><br />
+    <%= f.text_area :channels %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_segments %><br />
+    <%= f.text_area :customer_segments %>
+  </div>
+  <div class="field">
+    <%= f.label :cost_structure %><br />
+    <%= f.text_area :cost_structure %>
+  </div>
+  <div class="field">
+    <%= f.label :revenue_streams %><br />
+    <%= f.text_area :revenue_streams %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

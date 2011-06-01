@@ -1,0 +1,61 @@
+<% is_edit = controller.action_name.match(/new|edit/) %>
+
+<%= form_for(@canvas, :html => { :class => is_edit ? 'edit' : 'show' } ) do |f| %>
+
+    <% if is_edit %>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+    <% else %>
+        <h1><%= @canvas.name %></h1>
+    <% end %>
+
+    <table id="canvas">
+        <tr>
+            <td rowspan="2" class="problem">
+                <h2>Problem</h2>
+                <%= f.text_area :problem, :disabled => !is_edit %>
+            </td>
+            <td class="solution">
+                <h2>Solution</h2>
+                <%= f.text_area :solution, :disabled => !is_edit %>
+            </td>
+            <td colspan="2" rowspan="2" class="uvp">
+                <h2>Unique Value Proposition</h2>
+                <%= f.text_area :uvp, :disabled => !is_edit %>
+            </td>
+            <td class="unfairadvantage">
+                <h2>Unfair Advantage</h2>
+                <%= f.text_area :unfair_advantage, :disabled => !is_edit %>
+            </td>
+            <td rowspan="2" class="customersegments">
+                <h2>Customer Segments</h2>
+                <%= f.text_area :customer_segments, :disabled => !is_edit %>
+            </td>
+        </tr>
+        <tr>
+            <td class="keymetrics">
+                <h2>Key Metrics</h2>
+                <%= f.text_area :key_metrics, :disabled => !is_edit %>
+            </td>
+            <td class="channels">
+                <h2>Channels</h2>
+                <%= f.text_area :channels, :disabled => !is_edit %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="coststructure">
+                <h2>Cost Structure</h2>
+                <%= f.text_area :cost_structure, :disabled => !is_edit %>
+            </td>
+            <td colspan="3" class="revenuestreams">
+                <h2>Revenue Streams</h2>
+                <%= f.text_area :revenue_streams, :disabled => !is_edit %>
+            </td>
+        </tr>
+    </table>
+  <% if is_edit %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+<% end %>
