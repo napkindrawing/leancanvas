@@ -98,7 +98,6 @@ table#canvas td textarea:disabled {
     background: hsl(212,30%,94%);
 }
 table#canvas td textarea#canvas_uvp {
-    width: 166px;
 }
 table#canvas td[rowspan="2"] textarea {
     height: 228px;
