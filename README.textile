@@ -2,4 +2,4 @@ h2. Lean Canvas
 
 Ghetto super-quick CRUD Rails 3 implementation of http://leancanvas.com
 
-
+!https://github.com/napkindrawing/leancanvas/raw/master/public/images/leancanvas.png!
